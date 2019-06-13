@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server",
+    "build": "webpack-cli"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,44 @@
   "bugs": {
     "url": "https://github.com/huangmin1006/webpack-simple/issues"
   },
-  "homepage": "https://github.com/huangmin1006/webpack-simple#readme"
+  "homepage": "https://github.com/huangmin1006/webpack-simple#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-enough": "^0.3.5",
+    "eslint-loader": "^2.1.2",
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.0.0",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.1"
+  },
+  "eslintConfig": {
+    "extends": "enough",
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-0"
+    ]
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
 }
