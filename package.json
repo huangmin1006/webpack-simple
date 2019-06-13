@@ -1,0 +1,19 @@
+{
+  "name": "webpack-simple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangmin1006/webpack-simple.git"
+  },
+  "author": "huangmin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huangmin1006/webpack-simple/issues"
+  },
+  "homepage": "https://github.com/huangmin1006/webpack-simple#readme"
+}
