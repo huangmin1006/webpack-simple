@@ -35,6 +35,16 @@ module.exports = {
         compress: true, // 开启 gzip 压缩
         proxy: { // 请求到 /test 现在会被代理到请求 https://easy-mock.com/mock/5cff9ebf4c9ace76ebeb8589/name/name。
             "/test": "https://easy-mock.com/mock/5cff9ebf4c9ace76ebeb8589/name/name"
+        },
+        stats: { // 控制台信息显示
+            // 添加资源信息
+            assets: false,
+            // 添加时间信息
+            timings: true,
+            // 显示哪个模块导出被用到
+            usedExports: false,
+            // 添加 webpack 版本信息
+            version: true,
         }
     },
     optimization: {
