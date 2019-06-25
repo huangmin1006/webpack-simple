@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 // 第三方插件数组
 const VENDOR = ["./src/vendor/jquery"];
@@ -34,7 +36,11 @@ module.exports = {
         // publicPath: "http://localhost:9527/assets/",
         compress: true, // 开启 gzip 压缩
         proxy: { // 请求到 /test 现在会被代理到请求 https://easy-mock.com/mock/5cff9ebf4c9ace76ebeb8589/name/name。
-            "/test": "https://easy-mock.com/mock/5cff9ebf4c9ace76ebeb8589/name/name"
+            'test': {
+                target: "https://easy-mock.com/mock/5cff9ebf4c9ace76ebeb8589/name/name",
+                secure: false, // 是否验证SSL Certs
+                ws: true,// 是否代理 websockets
+            }
         },
         stats: { // 控制台信息显示
             // 添加资源信息
@@ -101,6 +107,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new BundleAnalyzerPlugin(),
     ],
 };
